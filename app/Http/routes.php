@@ -17,7 +17,17 @@ Route::get('/', function () {
 
 Route::auth();
 
+//Auth Required
 Route::get('/home', 'HomeController@index');
+
+//Admin Access
+Route::get('/admin','HomeController@adcheck');
+Route::post('/admin','HomeController@admin');
+
+//No Restrict
+Route::get('/contact','BaseController@contact');
+Route::get('/leaderboard','BaseController@leader');
+Route::get('/rules','BaseController@rules');
 
 //FacebookAPI
 Route::get('/facebook','Auth\AuthController@redirectAPI');
