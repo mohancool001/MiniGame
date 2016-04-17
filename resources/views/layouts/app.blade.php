@@ -142,6 +142,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/forum') }}">Forum</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
