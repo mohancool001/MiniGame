@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserLevel extends Model
+class Blacklist extends Model
 {
-    protected $table ="userlevel";
+    protected $table ="blacklist";
     protected $primaryKey = "id";
     public $timestamps = false;
 
-    protected $fillable = ['user_id', 'level', 'timest','solved'];
+    protected $fillable = ['user_id', 'isblocked'];
 }

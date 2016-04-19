@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\UserLevel;
 use App\Http\Requests;
 
 class BaseController extends Controller
@@ -20,7 +20,8 @@ class BaseController extends Controller
 
     public function leader()
     {
-    	return view('home');
+
+    	return view('leader',compact('users',));
     }
 
     public function contact()

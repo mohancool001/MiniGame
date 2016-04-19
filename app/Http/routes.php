@@ -19,6 +19,8 @@ Route::auth();
 
 //Auth Required
 Route::get('/home', 'HomeController@index');
+Route::get('/game','HomeController@stgame');
+Route::post('/game','HomeController@chgame');
 
 //Admin Access
 Route::get('/admin','HomeController@adcheck');

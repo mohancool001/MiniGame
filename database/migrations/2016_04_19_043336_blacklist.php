@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Userlevel extends Migration
+class Blacklist extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,11 @@ class Userlevel extends Migration
      */
     public function up()
     {
-        Schema::create('userlevel', function (Blueprint $table) {
+        Schema::create('blacklist', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('level');
-            $table->timestamp('timest')->useCurrent();
-            $table->timestamp('solved');
+            $table->integer('isblocked')->default('0');
         });
     }
 
@@ -29,6 +27,6 @@ class Userlevel extends Migration
      */
     public function down()
     {
-        Schema::drop('userlevel');
+        Schema::drop('blacklist');
     }
 }
