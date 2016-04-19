@@ -42,7 +42,15 @@ class HomeController extends Controller
         $pass = Input::get('password');
         if($pass == 'mohanadmin')
         {
-
+            $users = User::all();
+            $userb = Blacklist::all();
+            foreach ($users as $i => $user) {
+                $userarr[]=$user->name;
+            }
+            foreach ($userb as $key => $ub) {
+                $black[] = $user->isblocked;
+            }
+            return view('adminp',compact('userarr','black'));
         }
         else
         {

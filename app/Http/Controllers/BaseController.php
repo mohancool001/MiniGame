@@ -19,9 +19,9 @@ class BaseController extends Controller
     }
 
     public function leader()
-    {
-
-    	return view('leader',compact('users',));
+    {   
+        $lead = UserLevel::where
+    	return view('leader',compact('users'));
     }
 
     public function contact()
